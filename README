@@ -1,0 +1,50 @@
+ROI
+
+↓
+
+Preprocess
+
+↓
+
+OCR
+
+↓
+
+PostProcess
+
+↓
+
+Dictionary
+
+↓
+
+Validation
+
+↓
+
+Result
+
+process_field(image,"VIN",config)
+
+↓
+
+"NAAM01CA4AAR328710"
+
+_________________config.py
+                     │
+                     ▼
+main.py ─────► strategies.py
+                     │
+        ┌────────────┼────────────┐
+        ▼            ▼            ▼
+     roi.py    preprocess.py    ocr.py
+        │            │            │
+        └────────────┼────────────┘
+                     ▼
+              postprocess.py
+                     ▼
+              validator.py
+                     ▼
+             dictionaries/
+                     ▼
+                export/
