@@ -1,3 +1,149 @@
+# OCR Document CAR
+
+A modular OCR pipeline for extracting, post-processing, and validating structured information from vehicle-related documents.
+
+This project uses a step-by-step pipeline to detect the Region of Interest (ROI), preprocess the image, run OCR, clean and validate extracted text, and finally export the result.
+
+---
+
+## Overview
+
+The pipeline follows these stages:
+
+1. **ROI Detection**  
+   Identify the relevant area in the document image.
+
+2. **Preprocessing**  
+   Improve image quality for OCR using techniques like resizing, thresholding, denoising, and normalization.
+
+3. **OCR**  
+   Extract text from the selected region.
+
+4. **Post-Processing**  
+   Clean and format OCR output.
+
+5. **Dictionary Matching**  
+   Compare extracted values with predefined dictionaries.
+
+6. **Validation**  
+   Validate fields such as VIN, license plate, or other structured data.
+
+7. **Result Export**  
+   Save the final structured output in the `export/` directory.
+
+---
+
+## Project Structure
+```bash
+.
+├── main.py
+├── config.py
+├── strategies.py
+├── roi.py
+├── preprocess.py
+├── ocr.py
+├── postprocess.py
+├── validator.py
+├── dictionaries/
+└── export/
+File Descriptions
+main.py
+```
+
+
+
+## Features
+
+- Modular and extensible OCR pipeline
+- ROI-based document processing
+- Image preprocessing for better OCR performance
+- Post-processing and normalization of OCR output
+- Dictionary-based correction and matching
+- Validation of structured fields
+- Export-ready results
+- Example Workflow
+- python
+- process_field(image, "VIN", config)
+- Example output:
+
+```text
+"NAAM01CA4AAR328710"
+Installation
+Clone the repository:
+```
+
+```bash
+git clone https://github.com/sajadparcham/orc_document_car.git
+cd orc_document_car
+Install dependencies:
+```
+
+```bash
+pip install -r requirements.txt
+If requirements.txt does not exist yet, install the required packages manually based on the codebase.
+```
+
+# Usage
+
+## Run the main script:
+
+```bash
+python main.py
+```
+
+If your project supports field-based processing, you can use it like:
+
+
+```python
+from main import process_field
+result = process_field(image, "VIN", config)
+print(result)
+```
+
+Configuration
+The behavior of the pipeline can be adjusted in config.py.
+
+Typical configurable items may include:
+
+OCR engine settings
+Threshold values for preprocessing
+ROI coordinates or detection rules
+Validation rules
+Dictionary paths
+Output
+Processed results are exported to the export/ folder.
+
+The output may include:
+
+extracted text
+structured JSON
+validation status
+corrected values
+Roadmap
+Potential future improvements:
+
+Support for more document types
+Better OCR accuracy with advanced preprocessing
+Improved dictionary-based correction
+Batch processing for multiple images
+API integration
+UI dashboard for document upload and result preview
+Contributing
+Contributions are welcome.
+
+If you’d like to contribute:
+
+Fork the repository
+Create a new branch
+Make your changes
+Submit a pull request
+License
+Add your preferred license here.
+
+## Author
+- Developed by sajadparcham
+
+
 ROI
 
 ↓
