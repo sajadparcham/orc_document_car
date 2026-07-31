@@ -74,9 +74,10 @@ Example output:
 ## Clone the repository:
 ```bash
 git clone https://github.com/sajadparcham/orc_document_car.git
-cd orc_document_car
-Install dependencies:
 ```
+# cd orc_document_car
+# Install dependencies:
+
 
 ```bash
 pip install -r requirements.txt
@@ -100,27 +101,27 @@ result = process_field(image, "VIN", config)
 print(result)
 ```
 
-Configuration
-The behavior of the pipeline can be adjusted in config.py.
+## Configuration
+ # The behavior of the pipeline can be adjusted in config.py.
 
-Typical configurable items may include:
+## Typical configurable items may include:
 
-OCR engine settings
-Threshold values for preprocessing
-ROI coordinates or detection rules
-Validation rules
-Dictionary paths
-Output
-Processed results are exported to the export/ folder.
+- OCR engine settings
+- Threshold values for preprocessing
+- ROI coordinates or detection rules
+- Validation rules
+- Dictionary paths
+# Output
+- Processed results are exported to the export/ folder.
 
-The output may include:
+# The output may include:
 
-extracted text
-structured JSON
-validation status
-corrected values
-Roadmap
-Potential future improvements:
+- extracted text
+- structured JSON
+- validation status
+- corrected values
+- Roadmap
+## Potential future improvements:
 
 Support for more document types
 Better OCR accuracy with advanced preprocessing
