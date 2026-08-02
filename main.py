@@ -17,3 +17,11 @@ for field in CONFIG:
     results[field] = text
 
 save_docx(results)
+
+ocr_result = ocr.recognize(crop, field_config)
+
+raw_text = sort_lines(
+
+    texts=ocr_result["texts"],
+    boxes=ocr_result["boxes"],
+    rtl=(field_config["lang"] == "fa")
